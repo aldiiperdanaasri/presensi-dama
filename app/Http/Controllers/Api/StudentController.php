@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    public function getAllStudents()
+    {
+        $students = Student::all();
+
+        return response()->json([
+            'message' => 'List of students',
+            'data' => $students,
+        ], 200);
+    }
+
     public function addStudent(Request $request)
     {
         $request->validate([
