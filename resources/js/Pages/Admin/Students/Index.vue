@@ -42,21 +42,25 @@
                                 <div class="mt-2"></div>
                                 <tbody>
                                     <tr v-for="(student, index) in students.data" :key="index">
-                                    <td class="fw-bold text-center align-middle">
-                                        {{ ++index + (students.current_page - 1) * students.per_page }}
-                                    </td>
-                                    <td class="d-flex align-items-center">
-                                        <img :src="`/storage/images/${student.image_url}`" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
-                                        {{ student.name }}
-                                    </td>
-                                    <td class="align-middle">{{ student.class }}</td>
-                                    <td class="align-middle">
-                                        <Link :href="`/admin/students/${student.id}/edit`"
-                                            class="btn btn-sm btn-info border-0 me-2" type="button"><i class="fa fa-pencil-alt"></i></Link>
-                                        <button @click.prevent="destroy(student.id)"
-                                            class="btn btn-sm btn-danger border-0"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                        <td class="fw-bold text-center align-middle">
+                                            {{ ++index + (students.current_page - 1) * students.per_page }}
+                                        </td>
+                                        <td class="d-flex align-items-center">
+                                            <div
+                                                class="rounded-circle me-3 d-flex justify-content-center align-items-center text-white"
+                                                style="width: 40px; height: 40px; background-color: #6c757d; font-weight: bold; text-transform: uppercase;">
+                                                {{ student.name.charAt(0) }}
+                                            </div>
+                                            {{ student.name }}
+                                        </td>
+                                        <td class="align-middle">{{ student.class }}</td>
+                                        <td class="align-middle">
+                                            <Link :href="`/admin/students/${student.id}/edit`"
+                                                class="btn btn-sm btn-info border-0 me-2" type="button"><i class="fa fa-pencil-alt"></i></Link>
+                                            <button @click.prevent="destroy(student.id)"
+                                                class="btn btn-sm btn-danger border-0"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
