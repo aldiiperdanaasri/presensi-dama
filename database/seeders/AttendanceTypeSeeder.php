@@ -51,6 +51,14 @@ class AttendanceTypeSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+
+            [
+                'name' => 'Lainnya',
+                'time_in' => '00:00',
+                'time_out' => '23:59',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }
