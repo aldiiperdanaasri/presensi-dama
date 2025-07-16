@@ -1,7 +1,7 @@
 <template>
 
     <Head>
-        <title>Login Administrator - Aplikasi Ujian Online</title>
+        <title>Login Administrator • Presensi Darul Aman</title>
     </Head>
     <div class="bg-white shadow border-0 rounded-3 border-light p-4 p-lg-5 w-100 fmxw-500">
         <div class="text-center text-md-center mb-4 mt-md-0">

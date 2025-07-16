@@ -2,23 +2,27 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Exam;
 use App\Models\Student;
-use App\Models\Classroom;
-use App\Models\ExamSession;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Attendance;
+use App\Models\AttendanceType;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function __invoke(Request $request)
     {
-        return inertia('Admin/Dashboard/Index', []);
+        $users = User::count() - 1;
+        $students = Student::count();
+        $attendance_types = AttendanceType::count();
+        $attendances = Attendance::count();
+
+        return inertia('Admin/Dashboard/Index', [
+            'users'            => $users,
+            'students'         => $students,
+            'attendance_types' => $attendance_types,
+            'attendances'      => $attendances,
+        ]);
     }
 }
