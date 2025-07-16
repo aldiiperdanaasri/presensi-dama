@@ -18,13 +18,13 @@
                                             placeholder="Cari sesuatu...">
                                     </div>
                                 </form>
-                                <Link href="/admin/attendance_types/create" class="btn btn-md btn-primary border-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                    fill="currentColor" class="bi bi-plus-lg icon icon-xs" viewBox="16 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
-                                </svg>
-                                Tambah
+                                <Link href="/admin/attendance_types/create" class="btn btn-md btn-primary border-0" v-if="$page.props.auth.user.id === 1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        fill="currentColor" class="bi bi-plus-lg icon icon-xs" viewBox="16 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                                    </svg>
+                                    Tambah
                                 </Link>
                             </div>
                         </div>
